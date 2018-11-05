@@ -1,0 +1,19 @@
+<html>
+    <head>
+    </head>
+    <body>
+	<form action="{% url 'blog:edit_article' %}" method="post">
+	    {% csrf_token %} 
+	    <label>标题
+		<input type="hidden" name="id" value="{{article.id}}"/>
+		<input type="text" name="title" value="{{article.title}}"/>
+	    </label>
+	    <br/>
+	    <label>内容
+		<input type="text" name="content" value="{{article.content}}"/>
+	    </label>
+	    <br/>
+	    <input type="submit" value="提交"/>
+	</form>
+    </body>
+</html>
